@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+<ion-list>
+  <ion-item-sliding *ngFor="let task of tasks">
+    <ion-item>
+      <h2>{{ task.title }}</h2>
+      <p>{{ task.description }}</p>
+    </ion-item>
+    <ion-item-options side="right">
+      <button ion-button color="primary" (click)="updateTask(task)">
+        <ion-icon name="create"></ion-icon>
+        UPDATE
+      </button>
+      <button ion-button color="danger" (click)="deleteTask(task.key)">
+        <ion-icon name="trash"></ion-icon>
+        DELETE
+      </button>
+    </ion-item-options>
+  </ion-item-sliding>
+</ion-list>
+
+  <ion-fab bottom right>
+    <button ion-fab color="primary" (click)="newTask()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>
